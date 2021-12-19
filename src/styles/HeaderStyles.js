@@ -7,8 +7,6 @@ const HeaderContainer = styled.header`
 
   background-color: #2b244d;
   color: #fefefe;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 19px;
   
   display: flex;
   flex-direction: row;

@@ -2,10 +2,11 @@ import React from 'react';
 import {BrowserRouter} from 'react-router-dom'
 import AppRouter from "./components/AppRouter";
 import Header from "./UI/Header";
+import {MainContainer} from "./styles/MainStyles";
 
 const App = () => {
     return (
-        <div style={{minHeight: '100vh'}}>
+        <MainContainer>
           <BrowserRouter>
               <Header/>
               <div style={{textAlign: "center"}}>
@@ -13,7 +14,7 @@ const App = () => {
               </div>
               <AppRouter/>
           </BrowserRouter>
-        </div>
+        </MainContainer>
     );
 };
 
