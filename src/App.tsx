@@ -5,9 +5,12 @@ import Header from "./UI/Header";
 
 const App = () => {
     return (
-        <div>
+        <div style={{minHeight: '100vh'}}>
           <BrowserRouter>
               <Header/>
+              <div style={{textAlign: "center"}}>
+                  QWERTYUIOPOIUYTREW
+              </div>
               <AppRouter/>
           </BrowserRouter>
         </div>
