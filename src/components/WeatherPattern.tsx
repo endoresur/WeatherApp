@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import {IWeather} from "../types/types";
 import {Container} from "../styles/MainStyles";
+import WeatherCard from "./WeatherCard";
 
 interface APIProps {
     api_key: string,
@@ -34,7 +35,7 @@ const WeatherPattern: React.FC<APIProps> =
 
     return (
         <Container>
-            {weather?.main.temp}
+            <WeatherCard weather={weather}/>
         </Container>
     );
 };

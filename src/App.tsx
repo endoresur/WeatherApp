@@ -1,6 +1,6 @@
 import React from 'react';
 import {BrowserRouter} from 'react-router-dom'
-import Header from "./UI/Header";
+import Header from "./components/Header";
 import {MainContainer} from "./styles/MainStyles";
 import WeatherList from "./components/WeatherList";
 
