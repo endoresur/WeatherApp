@@ -1,18 +1,20 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
+import {IWeather} from "../types/types";
+import {Container} from "../styles/MainStyles";
 
-interface WeatherProps {
+interface APIProps {
     api_key: string,
     city: string
 }
 
-const WeatherPattern: React.FC<WeatherProps> =
+const WeatherPattern: React.FC<APIProps> =
     ({
          api_key,
          city
      }) => {
 
-    const [weather, setWeather] = useState('');
+    const [weather, setWeather] = useState<IWeather>();
 
     useEffect(() => {
         fetchWeather();
@@ -21,8 +23,9 @@ const WeatherPattern: React.FC<WeatherProps> =
     async function fetchWeather() {
         try {
             const response =
-                await axios.get("http://api.openweathermap.org/data/2.5/weather?q=" + city +"&appid="+api_key);
-            setWeather(response.data.main.temp);
+                await axios.get<IWeather>("http://api.openweathermap.org/data/2.5/weather?q=" + city +"&appid="+api_key);
+            let result: IWeather = response.data;
+            setWeather(result);
         }
         catch (e) {
             alert(e);
@@ -30,9 +33,9 @@ const WeatherPattern: React.FC<WeatherProps> =
     }
 
     return (
-        <div>
-            {weather}
-        </div>
+        <Container>
+            {weather?.main.temp}
+        </Container>
     );
 };
 

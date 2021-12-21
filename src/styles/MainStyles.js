@@ -10,4 +10,8 @@ const MainContainer = styled.div`
   font-size: 19px;
 `
 
-export {MainContainer};
+const Container = styled.div`
+  margin: 20px min(5vmax, 32px);
+`
+
+export {MainContainer, Container};
