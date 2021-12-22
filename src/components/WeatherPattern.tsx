@@ -35,7 +35,7 @@ const WeatherPattern: React.FC<APIProps> =
 
     return (
         <Container>
-            <WeatherCard weather={weather}/>
+            <WeatherCard weatherData={weather}/>
         </Container>
     );
 };

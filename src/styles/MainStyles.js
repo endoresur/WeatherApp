@@ -11,7 +11,8 @@ const MainContainer = styled.div`
 `
 
 const Container = styled.div`
-  margin: 20px min(5vmax, 32px);
+  margin: 0 min(5vmax, 32px);
+  hyphens: auto;
 `
 
 export {MainContainer, Container};
