@@ -9,10 +9,9 @@ const CardContainer = styled.div`
 `
 
 const CardHeader = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  
+  text-align: center;  
   
   height: 45%;
   border-radius: 15px 15px 0 0;
@@ -22,6 +21,10 @@ const CardHeader = styled.div`
 `
 
 const CardBody = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  
   height: 55%;
   border-radius: 0 0 15px 15px;
 

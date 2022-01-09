@@ -1,7 +1,6 @@
 import React from 'react';
 import {CardBody, CardContainer, CardHeader} from "../styles/CardStyles";
 import {IWeather} from "../types/types";
-import {Container} from "../styles/MainStyles";
 
 interface WeatherProps {
     weatherData?: IWeather
@@ -12,18 +11,15 @@ const WeatherCard: React.FC<WeatherProps> = (weatherData) => {
     return (
         <CardContainer>
             <CardHeader>
-                <Container>
-                    {Math.round(Number(weather?.main.temp) - 273)}
-                </Container>
-                <Container>
-                    {weather?.wind.speed}
-                </Container>
-                <Container>
-                    {weather?.name}
-                </Container>
+                <div>
+                    12
+                </div>
+                <div>fsf</div>
+                <div>vdb</div>
             </CardHeader>
             <CardBody>
-                {Math.round(Number(weather?.main.temp) - 272)}
+                <div>{Math.round(Number(weather?.main.temp) - 273)}</div>
+                <div>45678</div>
             </CardBody>
         </CardContainer>
     );
