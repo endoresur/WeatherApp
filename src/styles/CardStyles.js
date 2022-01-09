@@ -1,21 +1,20 @@
 import styled from "styled-components";
 
 const CardContainer = styled.div`
-  border-radius: 15px;
-
-  line-height: 200px;
+  display: grid;
+  grid-auto-rows: 1fr 1fr;  
+  
   height: 430px;
   margin: 60px max(150px, 15vmax);  
 `
 
 const CardHeader = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);  
-  text-align: center;  
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+  align-items: center;  
   
-  height: 45%;
   border-radius: 15px 15px 0 0;
-
   color: #ffff;
   background-image: linear-gradient(#331565, #2e2e8d);
 `
@@ -23,11 +22,10 @@ const CardHeader = styled.div`
 const CardBody = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  align-content: center;
   text-align: center;
   
-  height: 55%;
   border-radius: 0 0 15px 15px;
-
   background-color: #f7f5ff;
 `
 

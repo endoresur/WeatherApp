@@ -12,7 +12,15 @@ const MainContainer = styled.div`
 
 const Container = styled.div`
   margin: 0 min(5vmax, 32px);
-  hyphens: auto;
 `
 
-export {MainContainer, Container};
+const GridContainer = styled.div`
+  display: grid;
+  grid-template-columns: ${props => props.columns || ''};
+  grid-template-rows: ${props => props.rows || ''};
+  
+  font-size: ${props => props.fs || '1em'};
+  
+`
+
+export {MainContainer, Container, GridContainer};
