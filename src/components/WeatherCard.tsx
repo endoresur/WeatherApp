@@ -21,8 +21,8 @@ const WeatherCard: React.FC<WeatherProps> = (weatherData) => {
     const city = weather?.name;
     const country = weather?.sys.country;
 
-    return (
-        <CardContainer>
+    const Header = () => {
+        return (
             <CardHeader>
                 <GridContainer rows={"1fr 1fr"}>
                     <div>{temperature}</div>
@@ -44,12 +44,26 @@ const WeatherCard: React.FC<WeatherProps> = (weatherData) => {
                     <div>{country}</div>
                 </GridContainer>
             </CardHeader>
+        )
+    }
+
+    const Body = () => {
+        return(
             <CardBody>
                 <div>{Math.round(Number(weather?.main.temp) - 273)}</div>
                 <div>45678</div>
             </CardBody>
+        )
+    }
+
+    return (
+        <CardContainer>
+            <Header/>
+            <Body/>
         </CardContainer>
     );
+
+
 };
 
 export default WeatherCard;
