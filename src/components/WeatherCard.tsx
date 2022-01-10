@@ -10,27 +10,34 @@ interface WeatherProps {
 const WeatherCard: React.FC<WeatherProps> = (weatherData) => {
     const weather = weatherData.weatherData;
 
-    const temperature = '12 °';
-    const temperature_min = '9 °';
-    const temperature_max = '15 °';
-    const cloudy = 'cloudy';
-    const humidity = 'humidity';
-    const humidity_num = '64%';
-    const wind = 'wind';
-    const wind_num = '12 K/M';
-    const city = 'Moscow';
-    const country = 'Russia'
+    const temperature = Math.round(Number(weather?.main.temp) - 273) + ' °';
+    const temperature_min = Math.round(Number(weather?.main.temp_min) - 273) + ' °';
+    const temperature_max = Math.round(Number(weather?.main.temp_max) - 273) + ' °';
+    const weather_type = weather?.weather[0].main;
+    const humidity = 'Humidity';
+    const humidity_num = weather?.main.humidity + '%';
+    const wind = 'Wind';
+    const wind_num = weather?.wind.speed + ' m/s';
+    const city = weather?.name;
+    const country = weather?.sys.country;
 
     return (
         <CardContainer>
             <CardHeader>
                 <GridContainer rows={"1fr 1fr"}>
                     <div>{temperature}</div>
-                    <div>{cloudy}</div>
+                    <div>{weather_type}</div>
                 </GridContainer>
                 <GridContainer rows={"1fr 1fr"}>
-                    <div>{humidity}</div>
-                    <div>{humidity_num}</div>
+                    <GridContainer rows={"1fr 1fr"}>
+                        <div>{humidity}</div>
+                        <div>{humidity_num}</div>
+                    </GridContainer>
+                    <p/>
+                    <GridContainer rows={"1fr 1fr"}>
+                        <div>{wind}</div>
+                        <div>{wind_num}</div>
+                    </GridContainer>
                 </GridContainer>
                 <GridContainer rows={"1fr 1fr"}>
                     <div>{city}</div>
