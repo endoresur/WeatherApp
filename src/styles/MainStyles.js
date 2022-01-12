@@ -11,7 +11,8 @@ const MainContainer = styled.div`
 `
 
 const Container = styled.div`
-  margin: 0 min(5vmax, 32px);
+  font-size: ${props => props.fs || '1em'};
+
 `
 
 const GridContainer = styled.div`

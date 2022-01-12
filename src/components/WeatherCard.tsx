@@ -1,7 +1,7 @@
 import React from 'react';
 import {CardBody, CardContainer, CardHeader} from "../styles/CardStyles";
 import {IWeather} from "../types/types";
-import {GridContainer} from "../styles/MainStyles";
+import {Container, GridContainer} from "../styles/MainStyles";
 
 interface WeatherProps {
     weatherData?: IWeather
@@ -10,9 +10,9 @@ interface WeatherProps {
 const WeatherCard: React.FC<WeatherProps> = (weatherData) => {
     const weather = weatherData.weatherData;
 
-    const temperature = Math.round(Number(weather?.main.temp) - 273) + ' °';
-    const temperature_min = Math.round(Number(weather?.main.temp_min) - 273) + ' °';
-    const temperature_max = Math.round(Number(weather?.main.temp_max) - 273) + ' °';
+    const temperature = Math.round(Number(weather?.main.temp) - 273) + '°';
+    const temperature_min = Math.round(Number(weather?.main.temp_min) - 273) + '°';
+    const temperature_max = Math.round(Number(weather?.main.temp_max) - 273) + '°';
     const weather_type = weather?.weather[0].main;
     const humidity = 'Humidity';
     const humidity_num = weather?.main.humidity + '%';
@@ -24,24 +24,25 @@ const WeatherCard: React.FC<WeatherProps> = (weatherData) => {
     const Header = () => {
         return (
             <CardHeader>
-                <GridContainer rows={"1fr 1fr"}>
-                    <div>{temperature}</div>
-                    <div>{weather_type}</div>
+                <GridContainer rows={"2fr 1fr"}>
+                    <GridContainer rows={"2fr 1fr"}>
+                        <Container fs={"3em"}>{temperature}</Container>
+                        <Container fs={"1.5em"}>{weather_type}</Container>
+                    </GridContainer>
+                    <GridContainer columns={"1fr 1fr"}>
+                        <GridContainer rows={"1fr 1fr"}>
+                            <Container>Min</Container>
+                            <Container>{temperature_min}</Container>
+                        </GridContainer>
+                        <GridContainer rows={"1fr 1fr"}>
+                            <Container>Max</Container>
+                            <Container>{temperature_max}</Container>
+                        </GridContainer>
+                    </GridContainer>
                 </GridContainer>
                 <GridContainer rows={"1fr 1fr"}>
-                    <GridContainer rows={"1fr 1fr"}>
-                        <div>{humidity}</div>
-                        <div>{humidity_num}</div>
-                    </GridContainer>
-                    <p/>
-                    <GridContainer rows={"1fr 1fr"}>
-                        <div>{wind}</div>
-                        <div>{wind_num}</div>
-                    </GridContainer>
-                </GridContainer>
-                <GridContainer rows={"1fr 1fr"}>
-                    <div>{city}</div>
-                    <div>{country}</div>
+                    <Container fs={"2.5em"}>{city}</Container>
+                    <Container fs={"2em"}>{country}</Container>
                 </GridContainer>
             </CardHeader>
         )
