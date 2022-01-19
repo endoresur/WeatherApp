@@ -1,0 +1,25 @@
+
+@keyframes show-card {
+    from {
+        transform: translateY(800px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.card {}
+
+.card-enter-active {
+    animation: show-card 1s forwards;
+}
+
+.card-enter-done {}
+
+.card-exit-active {
+    animation: show-card 1s reverse;
+}
+
+.card-exit-done {}

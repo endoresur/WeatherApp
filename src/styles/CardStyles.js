@@ -5,7 +5,7 @@ const CardContainer = styled.div`
   grid-auto-rows: 1fr 1fr;  
   
   height: 430px;
-  margin: 60px max(150px, 15vmax);  
+  margin: auto max(150px, 15vmax);  
 `
 
 const CardHeader = styled.div`

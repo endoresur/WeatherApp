@@ -12,8 +12,12 @@ const MainContainer = styled.div`
 const Container = styled.div`
   position: relative;
   
+  margin-top: ${props => props.mt || ''};  
+  margin-bottom: ${props => props.mb || ''};
+  margin-left: ${props => props.ml || ''};
+  margin-right: ${props => props.mr || ''};
+  
   font-size: ${props => props.fs || '1em'};
-
 `
 
 const GridContainer = styled.div`
