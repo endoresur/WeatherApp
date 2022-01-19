@@ -10,6 +10,8 @@ const MainContainer = styled.div`
 `
 
 const Container = styled.div`
+  position: relative;
+  
   font-size: ${props => props.fs || '1em'};
 
 `
