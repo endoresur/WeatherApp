@@ -47,3 +47,8 @@ export interface IWeather {
     name: string,
     cod: number
 }
+
+export interface APIProps {
+    apiKey: string,
+    city: string
+}

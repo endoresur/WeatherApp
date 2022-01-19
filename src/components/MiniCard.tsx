@@ -1,10 +1,12 @@
 import React from 'react';
+import {Card, MiniCardBody, MiniCardHeader} from "../styles/MiniCardsStyles";
 
 const MiniCard = () => {
     return (
-        <div>
-            
-        </div>
+        <Card >
+            <MiniCardHeader/>
+            <MiniCardBody/>
+        </Card>
     );
 };
 

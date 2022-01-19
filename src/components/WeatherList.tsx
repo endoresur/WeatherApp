@@ -37,6 +37,7 @@ const WeatherList = () => {
             >
                 <MiniCardsContainer>
                     <MiniCard/>
+                    <MiniCard/>
                 </MiniCardsContainer>
             </CSSTransition>
         )
@@ -56,7 +57,7 @@ const WeatherList = () => {
                 mountOnEnter
                 unmountOnExit
             >
-                <WeatherPattern api_key={API_KEY} city={city}/>
+                <WeatherPattern apiKey={API_KEY} city={city}/>
             </CSSTransition>
         )
     }
