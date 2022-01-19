@@ -6,12 +6,12 @@ import WeatherList from "./components/WeatherList";
 
 const App = () => {
     return (
-        <MainContainer>
-          <BrowserRouter>
-              <Header/>
-              <WeatherList/>
-          </BrowserRouter>
-        </MainContainer>
+        <BrowserRouter>
+            <MainContainer>
+                <Header/>
+                <WeatherList/>
+            </MainContainer>
+        </BrowserRouter>
     );
 };
 

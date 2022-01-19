@@ -6,8 +6,7 @@ const MainContainer = styled.div`
   
   background-image: linear-gradient(#f37bbb, #595ef5);
 
-  font-family: 'Open Sans', sans-serif;
-  font-size: 19px;
+  
 `
 
 const Container = styled.div`

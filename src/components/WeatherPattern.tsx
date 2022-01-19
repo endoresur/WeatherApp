@@ -16,9 +16,12 @@ const WeatherPattern: React.FC<APIProps> =
      }) => {
 
     const [weather, setWeather] = useState<IWeather>();
+    const [fetched, setFetched] = useState<boolean>(true);
 
     useEffect(() => {
-        fetchWeather();
+        if(fetched) {
+            fetchWeather();
+        }
     });
 
     async function fetchWeather() {
@@ -31,6 +34,7 @@ const WeatherPattern: React.FC<APIProps> =
         catch (e) {
             alert(e);
         }
+        setFetched(!fetched);
     }
 
     return (
