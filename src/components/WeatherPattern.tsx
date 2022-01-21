@@ -1,42 +1,33 @@
-import React, {useEffect, useState} from 'react';
+import React, {EffectCallback, useEffect, useState} from 'react';
 import axios from "axios";
 import {APIProps, IWeather} from "../types/types";
 import {Container} from "../styles/MainStyles";
 import WeatherCard from "./WeatherCard";
+import WeatherExtractor from "./WeatherExtractor";
 
 const WeatherPattern: React.FC<APIProps> =
     ({
          apiKey,
          city
-     }) => {
+    }) => {
 
-    const [weather, setWeather] = useState<IWeather>();
-    const [fetched, setFetched] = useState<boolean>(true);
+        const [weather, setWeather] = useState<IWeather>();
 
-    useEffect(() => {
-        if(fetched) {
-            fetchWeather();
+        const handleChange = (data: IWeather) => {
+            setWeather(data);
         }
-    });
 
-    async function fetchWeather() {
-        try {
-            const response =
-                await axios.get<IWeather>("http://api.openweathermap.org/data/2.5/weather?q=" + city +"&appid="+apiKey);
-            let result: IWeather = response.data;
-            setWeather(result);
-        }
-        catch (e) {
-            alert(e);
-        }
-        setFetched(!fetched);
-    }
-
-    return (
-        <Container>
-            <WeatherCard weatherData={weather}/>
-        </Container>
-    );
-};
+        return (
+            <div>
+                <WeatherExtractor
+                    onChange={handleChange}
+                    apiKey={apiKey}
+                    city={city}/>
+                <Container>
+                    <WeatherCard weatherData={weather}/>
+                </Container>
+            </div>
+        );
+    };
 
 export default WeatherPattern;

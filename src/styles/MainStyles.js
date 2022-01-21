@@ -25,6 +25,12 @@ const GridContainer = styled.div`
   grid-template-columns: ${props => props.columns || ''};
   grid-template-rows: ${props => props.rows || ''};
   
+  border-right: ${props => props.br || '' };
+  border-left: ${props => props.bl || '' };
+  border-top: ${props => props.bt || '' };
+  border-bottom: ${props => props.bb || '' };
+  border: ${props => props.b || ''};
+
   font-size: ${props => props.fs || '1em'};
   
 `

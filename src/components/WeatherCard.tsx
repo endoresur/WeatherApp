@@ -24,7 +24,7 @@ const WeatherCard: React.FC<WeatherProps> = (weatherData) => {
     const Header = () => {
         return (
             <CardHeader>
-                <GridContainer rows={"2fr 1fr"}>
+                <GridContainer rows={"2fr 1fr"} br={"white solid 2px"}>
                     <GridContainer rows={"2fr 1fr"}>
                         <Container fs={"3em"}>{temperature}</Container>
                         <Container fs={"1.5em"}>{weather_type}</Container>
@@ -51,8 +51,12 @@ const WeatherCard: React.FC<WeatherProps> = (weatherData) => {
     const Body = () => {
         return(
             <CardBody>
-                <div>{Math.round(Number(weather?.main.temp) - 273)}</div>
-                <div>45678</div>
+                <GridContainer>
+                    {Math.round(Number(weather?.main.temp) - 273)}
+                </GridContainer>
+                <GridContainer bl={"black solid 2px"}>
+                    45678
+                </GridContainer>
             </CardBody>
         )
     }
