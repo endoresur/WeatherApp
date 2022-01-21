@@ -49,10 +49,13 @@ export interface IWeather {
 }
 
 export interface APIProps {
-    apiKey: string,
     city: string
 }
 
 export interface ExtractorProps extends APIProps {
     onChange: Function
+}
+
+export interface MiniCardProps extends APIProps {
+    onClick: Function
 }

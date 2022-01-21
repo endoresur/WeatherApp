@@ -8,58 +8,40 @@ import MiniCard from "./MiniCard";
 import {CSSTransition, SwitchTransition} from "react-transition-group";
 import '../styles/ContainerAnimations.css';
 
-const API_KEY = "73db7f4301d0c6f7878a5bb80359f431";
-const city = "Moscow";
+const myCities = ["Moscow", "Boston", "Ekaterinburg"];
 
 const WeatherList = () => {
-    const [cities, setCities] = useState<ICity[]>([]);
+    const [cities, setCities] = useState(myCities);
 
     const [showList, setShowList] = useState<boolean>(true);
+    const [choice, setChoice] = useState<string>(cities[0]);
 
     const click = () => {
         console.log("click");
         setShowList(!showList);
     }
 
+    const handleChange = (city: string) => {
+        setChoice(city);
+        click();
+    }
+
     const ShowMiniCardsContainer = () => {
         return (
-            <CSSTransition
-                in={showList}
-                timeout={2000}
-                classNames={{
-                    enterActive: 'container-enter-active',
-                    enterDone: 'container-enter-done',
-                    exitActive: 'container-exit-active',
-                    exitDone: 'container-exit-done'
-                }}
-                mountOnEnter
-                unmountOnExit
-            >
-                <MiniCardsContainer>
-                    <MiniCard/>
-                    <MiniCard/>
-                </MiniCardsContainer>
-            </CSSTransition>
-        )
+            <MiniCardsContainer>
+                {
+                    cities.map((city) => {
+                        return (
+                            <MiniCard city={city} onClick={handleChange}/>
+                        );
+                    })
+                }
+            </MiniCardsContainer>
+        );
     }
 
     const ShowWeatherPattern = () => {
-        return (
-            <CSSTransition
-                in={!showList}
-                timeout={2000}
-                classNames={{
-                    enterActive: 'card-enter-active',
-                    enterDone: 'card-enter-done',
-                    exitActive: 'card-exit-active',
-                    exitDone: 'card-exit-done'
-                }}
-                mountOnEnter
-                unmountOnExit
-            >
-                <WeatherPattern apiKey={API_KEY} city={city}/>
-            </CSSTransition>
-        )
+        return (<WeatherPattern city={choice}/>);
     }
 
     return (

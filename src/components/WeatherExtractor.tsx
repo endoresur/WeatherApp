@@ -4,11 +4,11 @@ import axios from "axios";
 
 const WeatherExtractor: React.FC<ExtractorProps> = (
     {
-     apiKey,
      city,
      onChange
     }) => {
 
+    const apiKey = "73db7f4301d0c6f7878a5bb80359f431";
     const [fetched, setFetched] = useState<boolean>(true);
 
     useEffect(() => {
@@ -24,7 +24,10 @@ const WeatherExtractor: React.FC<ExtractorProps> = (
     async function fetchWeather() {
         try {
             const response =
-                await axios.get<IWeather>("http://api.openweathermap.org/data/2.5/weather?q=" + city +"&appid="+apiKey);
+                await axios.get<IWeather>(
+                    "http://api.openweathermap.org/data/2.5/weather?q=" +
+                    city +
+                    "&appid="+apiKey);
             handleChange(response.data);
         }
         catch (e) {
@@ -33,11 +36,7 @@ const WeatherExtractor: React.FC<ExtractorProps> = (
         setFetched(!fetched);
     }
 
-    return (
-        <div>
-
-        </div>
-    );
+    return (<></>);
 };
 
 export default WeatherExtractor;
