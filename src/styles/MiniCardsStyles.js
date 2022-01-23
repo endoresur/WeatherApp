@@ -20,6 +20,9 @@ const Card = styled.div`
 
   display: grid;
   grid-auto-rows: 1fr 1fr;
+
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  border-radius: 30px;
 `
 
 const MiniCardHeader = styled.div`
@@ -37,7 +40,7 @@ const MiniCardBody = styled.div`
   align-content: center;
   text-align: center;
 
-  border-radius: 0 0 30px 30px;
+  //border-radius: 0 0 30px 30px;
 `
 
 const Button = styled.div`
@@ -54,7 +57,7 @@ const Button = styled.div`
   background-image: linear-gradient(to right, #F27BBB 0%, #4830F0 51%, #9EEFE1 100%);
   background-size: 200% auto;
   box-shadow: 0 0 20px rgba(0, 0, 0, .1);
-  transition: .5s;
+  transition: 1s;
   
   &:hover {
     background-position: right center;

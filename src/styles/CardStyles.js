@@ -5,12 +5,15 @@ const CardContainer = styled.div`
   grid-auto-rows: 1fr 1fr;  
   
   height: 430px;
-  margin: auto max(150px, 15vmax);  
+  margin: auto max(150px, 15vmax);
+
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  border-radius: 30px;
 `
 
 const CardHeader = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   text-align: center;
   align-items: center;  
   
@@ -21,7 +24,7 @@ const CardHeader = styled.div`
 
 const CardBody = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   align-content: center;
   text-align: center;
   

@@ -23,7 +23,7 @@ const MiniCard: React.FC<MiniCardProps> = (
             <MiniCardHeader>
                 <GridContainer rows={"1fr 4fr 2fr 1fr"}>
                     <Container>{weather?.name}</Container>
-                    <Container p={"10px"}>
+                    <Container>
                         <ImgDeterminant
                             weather={weather?.weather[0].main}
                             color={Color.Light}

@@ -17,7 +17,8 @@ const WeatherPattern: React.FC<APIProps> =
             <div>
                 <WeatherExtractor
                     onChange={handleChange}
-                    city={city}/>
+                    city={city}
+                />
                 <Container>
                     <WeatherCard weatherData={weather}/>
                 </Container>

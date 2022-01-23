@@ -32,7 +32,7 @@ const ImgDeterminant: React.FC<ImgDeterminantProps> = (
 
     return (
         <div>
-            <img src={image} width="180" height="180" alt=""/>
+            <img src={image} width="150" height="150" alt=""/>
         </div>
     );
 };
