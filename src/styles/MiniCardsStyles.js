@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 const MiniCardsContainer = styled.div`
+  text-transform: uppercase;
+
   height: 500px;
   margin: auto;
 
@@ -36,7 +38,27 @@ const MiniCardBody = styled.div`
   text-align: center;
 
   border-radius: 0 0 30px 30px;
-  background-color: #f7f5ff;
 `
 
-export {MiniCardsContainer, Card, MiniCardHeader, MiniCardBody};
+const Button = styled.div`
+  cursor: pointer;
+
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  
+  padding: 10px 120px;
+
+  border-radius: 0 0 30px 30px;
+  letter-spacing: 2px;
+  background-image: linear-gradient(to right, #F27BBB 0%, #4830F0 51%, #9EEFE1 100%);
+  background-size: 200% auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+  transition: .5s;
+  
+  &:hover {
+    background-position: right center;
+  }
+`
+
+export {MiniCardsContainer, Card, MiniCardHeader, MiniCardBody, Button};
