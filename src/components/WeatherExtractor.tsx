@@ -25,7 +25,7 @@ const WeatherExtractor: React.FC<ExtractorProps> = (
         try {
             const response =
                 await axios.get<IWeather>(
-                    "http://api.openweathermap.org/data/2.5/weather?q=" +
+                    "https://api.openweathermap.org/data/2.5/weather?q=" +
                     city +
                     "&appid="+apiKey);
             handleChange(response.data);
