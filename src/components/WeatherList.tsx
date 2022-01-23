@@ -7,9 +7,8 @@ import MiniCard from "./MiniCard";
 import {CSSTransition, SwitchTransition} from "react-transition-group";
 import '../styles/ContainerAnimations.css';
 
-const myCities = ["Moscow", "Boston", "Ekaterinburg"];
-
 const WeatherList = () => {
+    const myCities = ["Moscow", "Boston", "Ekaterinburg"];
     const [cities, setCities] = useState(myCities);
 
     const [showList, setShowList] = useState<boolean>(true);

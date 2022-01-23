@@ -69,7 +69,7 @@ const WeatherCard: React.FC<WeatherProps> = (weatherData) => {
         return (
             <CardBody>
 
-                <GridContainer rows={"3fr 2fr"} br={"black solid 2px"}>
+                <GridContainer rows={"3fr 2fr"}>
                     <Container>
                         <img src={sunset} width={"120px"} alt={''}/>
                     </Container>
@@ -87,7 +87,7 @@ const WeatherCard: React.FC<WeatherProps> = (weatherData) => {
                     </Container>
                 </GridContainer>
 
-                <GridContainer rows={"3fr 2fr"} br={"black solid 2px"}>
+                <GridContainer rows={"3fr 2fr"}>
                     <Container mt={"5px"} mb={"-5px"}>
                         <img src={therm} width={"120px"} alt={''}/>
                     </Container>
@@ -105,7 +105,7 @@ const WeatherCard: React.FC<WeatherProps> = (weatherData) => {
                     </Container>
                 </GridContainer>
 
-                <GridContainer rows={"3fr 2fr"} br={"black solid 2px"}>
+                <GridContainer rows={"3fr 2fr"}>
                     <Container mt={"5px"} mb={"-5px"}>
                         <img src={pressure} width={"120px"} alt={''}/>
                     </Container>
