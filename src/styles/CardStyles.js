@@ -14,7 +14,7 @@ const CardHeader = styled.div`
   text-align: center;
   align-items: center;  
   
-  border-radius: 15px 15px 0 0;
+  border-radius: 30px 30px 0 0;
   color: #ffff;
   background-image: linear-gradient(#331565, #2e2e8d);
 `
@@ -25,7 +25,7 @@ const CardBody = styled.div`
   align-content: center;
   text-align: center;
   
-  border-radius: 0 0 15px 15px;
+  border-radius: 0 0 30px 30px;
   background-color: #f7f5ff;
 `
 

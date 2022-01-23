@@ -30,11 +30,11 @@ const WeatherCard: React.FC<WeatherProps> = (weatherData) => {
                         <Container fs={"1.5em"}>{weather_type}</Container>
                     </GridContainer>
                     <GridContainer columns={"1fr 1fr"}>
-                        <GridContainer rows={"1fr 1fr"}>
+                        <GridContainer br={"white solid 1px"} rows={"1fr 1fr"}>
                             <Container>Min</Container>
                             <Container>{temperature_min}</Container>
                         </GridContainer>
-                        <GridContainer rows={"1fr 1fr"}>
+                        <GridContainer bl={"white solid 1px"} rows={"1fr 1fr"}>
                             <Container>Max</Container>
                             <Container>{temperature_max}</Container>
                         </GridContainer>

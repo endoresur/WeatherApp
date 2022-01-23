@@ -59,3 +59,23 @@ export interface ExtractorProps extends APIProps {
 export interface MiniCardProps extends APIProps {
     onClick: Function
 }
+
+export const enum Color {
+    Dark = 'dark',
+    Light = 'light'
+}
+
+export interface ImgDeterminantProps {
+    weather: string | undefined,
+    color: Color
+}
+
+export const enum Weather {
+    Cloud = 'Clouds',
+    Mist = 'Mist',
+    Fog = 'Fog',
+    Rain = 'Rain',
+    Snow = 'Snow',
+    Storm = 'Storm',
+    Sun = 'Sun'
+}

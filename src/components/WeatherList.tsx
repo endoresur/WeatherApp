@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import WeatherPattern from "./WeatherPattern";
-import {ICity} from "../types/types";
 import {Container} from "../styles/MainStyles";
 import {Arrow, BackArrow} from "../styles/AdditionalElementsStyles";
 import {MiniCardsContainer} from "../styles/MiniCardsStyles";
@@ -29,46 +28,46 @@ const WeatherList = () => {
     const ShowMiniCardsContainer = () => {
         return (
             <MiniCardsContainer>
-                {
-                    cities.map((city) => {
-                        return (
-                            <MiniCard city={city} onClick={handleChange}/>
-                        );
-                    })
-                }
+                {cities.map((city) => {
+                    return (
+                        <MiniCard key={city} city={city} onClick={handleChange}/>
+                    );
+                })}
             </MiniCardsContainer>
         );
     }
 
     const ShowWeatherPattern = () => {
-        return (<WeatherPattern city={choice}/>);
+        return (
+            <div>
+                <div onClick={click}>
+                    <BackArrow>
+                        <Arrow/>
+                    </BackArrow>
+                </div>
+                <WeatherPattern key={choice} city={choice}/>
+            </div>
+        );
     }
 
     return (
-        <Container mt={'80px'}>
-            <div onClick={click}>
-                <BackArrow>
-                    <Arrow/>
-                </BackArrow>
-            </div>
-            <Container>
-                <SwitchTransition>
-                    <CSSTransition
-                        key={showList ? 1 : 2}
-                        timeout={1000}
-                        classNames={{
-                            enterActive: 'card-enter-active',
-                            enterDone: 'card-enter-done',
-                            exitActive: 'card-exit-active',
-                            exitDone: 'card-exit-done'
-                        }}
-                        mountOnEnter
-                        unmountOnExit
-                    >
-                        {showList ? ShowMiniCardsContainer : ShowWeatherPattern}
-                    </CSSTransition>
-                </SwitchTransition>
-            </Container>
+        <Container mt={'60px'}>
+            <SwitchTransition>
+                <CSSTransition
+                    key={showList ? 1 : 2}
+                    timeout={1000}
+                    classNames={{
+                        enterActive: 'card-enter-active',
+                        enterDone: 'card-enter-done',
+                        exitActive: 'card-exit-active',
+                        exitDone: 'card-exit-done'
+                    }}
+                    mountOnEnter
+                    unmountOnExit
+                >
+                    {showList ? ShowMiniCardsContainer : ShowWeatherPattern}
+                </CSSTransition>
+            </SwitchTransition>
         </Container>
     );
 };

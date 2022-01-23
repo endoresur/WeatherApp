@@ -3,7 +3,7 @@ import styled from "styled-components";
 const BackArrow = styled.div`
   position: absolute;
   left: 3%;
-  top: -15%;
+  top: -10%;
   
   height: 60px;
   width: 60px;

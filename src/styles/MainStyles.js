@@ -9,16 +9,23 @@ const MainContainer = styled.div`
 
 const ParentContainer = styled.div`
   
+  margin: ${props => props.m || ''};
   margin-top: ${props => props.mt || ''};
   margin-bottom: ${props => props.mb || ''};
   margin-left: ${props => props.ml || ''};
   margin-right: ${props => props.mr || ''};
   
+  padding: ${props => props.p || ''};
+  padding-top: ${props => props.pt || ''};
+  padding-bottom: ${props => props.pb || ''};
+  padding-left: ${props => props.pl || ''};
+  padding-right: ${props => props.pr || ''};
+
+  border: ${props => props.b || ''};
   border-right: ${props => props.br || '' };
   border-left: ${props => props.bl || '' };
   border-top: ${props => props.bt || '' };
   border-bottom: ${props => props.bb || '' };
-  border: ${props => props.b || ''}; 
     
 `
 
