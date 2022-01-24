@@ -77,5 +77,6 @@ export const enum Weather {
     Rain = 'Rain',
     Snow = 'Snow',
     Storm = 'Storm',
-    Sun = 'Sun'
+    Sun = 'Sun',
+    Clear = 'Clear',
 }

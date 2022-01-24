@@ -2,12 +2,12 @@ import styled from "styled-components";
 
 const CardContainer = styled.div`
   display: grid;
-  grid-auto-rows: 1fr 1fr;  
-  
-  height: 430px;
-  margin: auto max(150px, 15vmax);
+  grid-auto-rows: 1fr 1fr;
 
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  height: 430px;
+  margin: auto 150px;
+
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   border-radius: 30px;
 `
 

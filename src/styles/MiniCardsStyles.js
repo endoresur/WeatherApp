@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 const MiniCardsContainer = styled.div`
   text-transform: uppercase;
-
+  
   height: 500px;
-  margin: auto;
+  //margin-top: 5%;
 
   display: flex;
   flex-direction: row;
@@ -26,7 +26,7 @@ const Card = styled.div`
 `
 
 const MiniCardHeader = styled.div`
-  display: grid;
+  //display: grid;
   text-align: center;
   align-items: center;
 
@@ -36,7 +36,7 @@ const MiniCardHeader = styled.div`
 `
 
 const MiniCardBody = styled.div`
-  display: grid;
+  //display: grid;
   align-content: center;
   text-align: center;
 

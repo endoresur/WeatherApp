@@ -10,7 +10,7 @@ const ImgDeterminant: React.FC<ImgDeterminantProps> = (
     const Distribute = () => {
         if (color === Color.Dark) {
             if (weather === Weather.Fog || weather === Weather.Mist) { setImage(dark.fog_dark); }
-            if (weather === Weather.Sun) { setImage(dark.sun_dark); }
+            if (weather === Weather.Sun || weather === Weather.Clear) { setImage(dark.sun_dark); }
             if (weather === Weather.Cloud) { setImage(dark.cloud_dark); }
             if (weather === Weather.Rain) { setImage(dark.rain_dark); }
             if (weather === Weather.Snow) { setImage(dark.snow_dark); }
@@ -18,7 +18,7 @@ const ImgDeterminant: React.FC<ImgDeterminantProps> = (
         }
         else if (color === Color.Light) {
             if (weather === Weather.Fog || weather === Weather.Mist) { setImage(light.fog_light); }
-            if (weather === Weather.Sun) { setImage(light.sun_light); }
+            if (weather === Weather.Sun || weather === Weather.Clear) { setImage(light.sun_light); }
             if (weather === Weather.Cloud) { setImage(light.cloud_light); }
             if (weather === Weather.Rain) { setImage(light.rain_light); }
             if (weather === Weather.Snow) { setImage(light.snow_light); }

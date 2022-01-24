@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const MainContainer = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 100%;
   
   background-image: linear-gradient(#f37bbb, #595ef5);  
 `
@@ -46,4 +46,9 @@ const GridContainer = styled(ParentContainer)`
   
 `
 
-export {MainContainer, Container, GridContainer};
+const ContentContainer = styled(Container)`
+  top: 50%;
+  transform: translate(0, -50%);
+`
+
+export {MainContainer, Container, GridContainer, ContentContainer};

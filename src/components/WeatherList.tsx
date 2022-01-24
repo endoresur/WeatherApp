@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
 import WeatherPattern from "./WeatherPattern";
-import {Container} from "../styles/MainStyles";
+import {Container, ContentContainer} from "../styles/MainStyles";
 import {Arrow, BackArrow} from "../styles/AdditionalElementsStyles";
 import {MiniCardsContainer} from "../styles/MiniCardsStyles";
 import MiniCard from "./MiniCard";
 import {CSSTransition, SwitchTransition} from "react-transition-group";
 import '../styles/ContainerAnimations.css';
+
+// npm run deploy
 
 const WeatherList = () => {
     const myCities = ["Moscow", "Boston", "Ekaterinburg"];
@@ -38,19 +40,24 @@ const WeatherList = () => {
 
     const ShowWeatherPattern = () => {
         return (
-            <div>
+            <Container>
                 <div onClick={click}>
                     <BackArrow>
                         <Arrow/>
                     </BackArrow>
                 </div>
                 <WeatherPattern key={choice} city={choice}/>
-            </div>
+            </Container>
         );
     }
 
+    const style = {
+        //position: 'absolute',
+
+    }
+
     return (
-        <Container mt={'60px'}>
+        <ContentContainer>
             <SwitchTransition>
                 <CSSTransition
                     key={showList ? 1 : 2}
@@ -67,7 +74,7 @@ const WeatherList = () => {
                     {showList ? ShowMiniCardsContainer : ShowWeatherPattern}
                 </CSSTransition>
             </SwitchTransition>
-        </Container>
+        </ContentContainer>
     );
 };
 
