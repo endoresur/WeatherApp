@@ -51,11 +51,6 @@ const WeatherList = () => {
         );
     }
 
-    const style = {
-        //position: 'absolute',
-
-    }
-
     return (
         <ContentContainer>
             <SwitchTransition>
