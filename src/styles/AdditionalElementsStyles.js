@@ -11,7 +11,12 @@ const BackArrow = styled.div`
   background-color: #2b244d;
   border-radius: 50%;
   
-  cursor: pointer;
+  cursor: pointer;  
+  
+  transition: .5s;
+  &:hover {
+    transform: scale(1.2);
+  }
 `
 
 const Arrow = styled.div`

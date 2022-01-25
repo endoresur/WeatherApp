@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Button, Card, MiniCardBody, MiniCardHeader} from "../styles/MiniCardsStyles";
+import {Card, MiniCardBody, MiniCardHeader} from "../styles/MiniCardsStyles";
 import {Color, IWeather, MiniCardProps} from "../types/types";
 import WeatherExtractor from "./WeatherExtractor";
 import {Container, GridContainer} from "../styles/MainStyles";
@@ -37,10 +37,8 @@ const MiniCard: React.FC<MiniCardProps> = (
                     </Container>
                 </GridContainer>
             </MiniCardHeader>
-            <MiniCardBody>
-                <Container>
-                    <Button onClick={handleClick}>More</Button>
-                </Container>
+            <MiniCardBody onClick={handleClick}>
+                <Container>More</Container>
             </MiniCardBody>
 
             <WeatherExtractor

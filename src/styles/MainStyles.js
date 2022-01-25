@@ -26,6 +26,8 @@ const ParentContainer = styled.div`
   border-left: ${props => props.bl || '' };
   border-top: ${props => props.bt || '' };
   border-bottom: ${props => props.bb || '' };
+  
+  font-weight: ${props => props.fw || ''};
     
 `
 

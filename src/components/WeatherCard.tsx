@@ -75,8 +75,8 @@ const WeatherCard: React.FC<WeatherProps> = (weatherData) => {
                     </Container>
                     <Container>
                         <GridContainer rows={"1fr 1fr"} columns={"1fr 1fr"}>
-                            <Container>Sunrise</Container>
-                            <Container>Sunset</Container>
+                            <Container fw={"bold"}>Sunrise</Container>
+                            <Container fw={"bold"}>Sunset</Container>
                             <Container>
                                 {GetNormalTime(weather?.sys.sunrise)}
                             </Container>
@@ -93,8 +93,8 @@ const WeatherCard: React.FC<WeatherProps> = (weatherData) => {
                     </Container>
                     <Container>
                         <GridContainer rows={"1fr 1fr"} columns={"1fr 1fr"}>
-                            <Container>Min</Container>
-                            <Container>Max</Container>
+                            <Container fw={"bold"}>Min</Container>
+                            <Container fw={"bold"}>Max</Container>
                             <Container>
                                 {Math.round(Number(weather?.main.temp_min) - 273) + '°'}
                             </Container>
@@ -110,7 +110,7 @@ const WeatherCard: React.FC<WeatherProps> = (weatherData) => {
                         <img src={pressure} width={"120px"} alt={''}/>
                     </Container>
                     <GridContainer rows={"1fr 1fr"}>
-                        <Container>Pressure</Container>
+                        <Container fw={"bold"}>Pressure</Container>
                         <Container>{weather?.main.pressure}</Container>
                     </GridContainer>
                 </GridContainer>
@@ -121,8 +121,8 @@ const WeatherCard: React.FC<WeatherProps> = (weatherData) => {
                     </Container>
                     <Container>
                         <GridContainer rows={"1fr 1fr"} columns={"1fr 1fr"}>
-                            <Container>Speed</Container>
-                            <Container>Degrees</Container>
+                            <Container fw={"bold"}>Speed</Container>
+                            <Container fw={"bold"}>Degrees</Container>
                             <Container>{weather?.wind.speed}</Container>
                             <Container>{weather?.wind.deg}</Container>
                         </GridContainer>

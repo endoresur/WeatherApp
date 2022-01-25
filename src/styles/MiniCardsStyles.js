@@ -22,6 +22,12 @@ const Card = styled.div`
 
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   border-radius: 30px;
+
+  transition: .5s;
+  &:hover {
+    transform: scale(1.1);
+    z-index: 2;
+  }
 `
 
 const MiniCardHeader = styled.div`
@@ -33,15 +39,13 @@ const MiniCardHeader = styled.div`
 const MiniCardBody = styled.div`
   align-content: center;
   text-align: center;
-`
 
-const Button = styled.div`
   cursor: pointer;
 
   text-decoration: none;
   display: inline-block;
   color: white;
-  
+
   padding: 10px 120px;
   border-radius: 0 0 30px 30px;
   letter-spacing: 2px;
@@ -49,10 +53,10 @@ const Button = styled.div`
   background-size: 200% auto;
   box-shadow: 0 0 20px rgba(0, 0, 0, .1);
   transition: 1s;
-  
+
   &:hover {
     background-position: right center;
   }
 `
 
-export {MiniCardsContainer, Card, MiniCardHeader, MiniCardBody, Button};
+export {MiniCardsContainer, Card, MiniCardHeader, MiniCardBody};
