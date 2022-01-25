@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {APIProps, IWeather} from "../types/types";
-import {Container} from "../styles/MainStyles";
+import {Container, MainContainer} from "../styles/MainStyles";
 import WeatherCard from "./WeatherCard";
 import WeatherExtractor from "./WeatherExtractor";
 
@@ -14,7 +14,7 @@ const WeatherPattern: React.FC<APIProps> =
         }
 
         return (
-            <div>
+            <Container>
                 <WeatherExtractor
                     onChange={handleChange}
                     city={city}
@@ -22,7 +22,7 @@ const WeatherPattern: React.FC<APIProps> =
                 <Container>
                     <WeatherCard weatherData={weather}/>
                 </Container>
-            </div>
+            </Container>
         );
     };
 

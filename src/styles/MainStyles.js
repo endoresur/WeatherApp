@@ -49,8 +49,10 @@ const GridContainer = styled(ParentContainer)`
 `
 
 const ContentContainer = styled(Container)`
-  top: 50%;
-  transform: translate(0, -50%);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
 
 export {MainContainer, Container, GridContainer, ContentContainer};

@@ -1,16 +1,17 @@
 import React, {useState} from 'react';
 import WeatherPattern from "./WeatherPattern";
-import {Container, ContentContainer} from "../styles/MainStyles";
+import {Container, ContentContainer, MainContainer} from "../styles/MainStyles";
 import {Arrow, BackArrow} from "../styles/AdditionalElementsStyles";
 import {MiniCardsContainer} from "../styles/MiniCardsStyles";
 import MiniCard from "./MiniCard";
 import {CSSTransition, SwitchTransition} from "react-transition-group";
 import '../styles/ContainerAnimations.css';
+import MiniCardsList from "./MiniCardsList";
 
 // npm run deploy
 
 const WeatherList = () => {
-    const myCities = ["Moscow", "Boston", "Ekaterinburg"];
+    const myCities = ["Moscow", "Boston", "Ekaterinburg", "Paris", "Budapest", "Samara"];
     const [cities, setCities] = useState(myCities);
 
     const [showList, setShowList] = useState<boolean>(true);
@@ -28,31 +29,33 @@ const WeatherList = () => {
 
     const ShowMiniCardsContainer = () => {
         return (
-            <MiniCardsContainer>
-                {cities.map((city) => {
-                    return (
-                        <MiniCard key={city} city={city} onClick={handleChange}/>
-                    );
-                })}
-            </MiniCardsContainer>
+            <ContentContainer>
+                <MiniCardsList>
+                    {cities.map((city, index) => {
+                        return (
+                            <MiniCard key={index} city={city} onClick={handleChange}/>
+                        );
+                    })}
+                </MiniCardsList>
+            </ContentContainer>
         );
     }
 
     const ShowWeatherPattern = () => {
         return (
-            <Container>
+            <ContentContainer>
                 <div onClick={click}>
                     <BackArrow>
                         <Arrow/>
                     </BackArrow>
                 </div>
                 <WeatherPattern key={choice} city={choice}/>
-            </Container>
+            </ContentContainer>
         );
     }
 
     return (
-        <ContentContainer>
+        <MainContainer>
             <SwitchTransition>
                 <CSSTransition
                     key={showList ? 1 : 2}
@@ -69,7 +72,7 @@ const WeatherList = () => {
                     {showList ? ShowMiniCardsContainer : ShowWeatherPattern}
                 </CSSTransition>
             </SwitchTransition>
-        </ContentContainer>
+        </MainContainer>
     );
 };
 

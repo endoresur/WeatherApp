@@ -2,8 +2,10 @@ import styled from "styled-components";
 
 const MiniCardsContainer = styled.div`
   text-transform: uppercase;
-  
-  height: 500px;
+
+  overflow: scroll;  
+  overflow-y: hidden;
+  height: 100%;
 
   display: flex;
   flex-direction: row;
@@ -12,22 +14,21 @@ const MiniCardsContainer = styled.div`
 `
 
 const Card = styled.div`
-  height: 90%;
-  width: 300px;  
-  margin-left: auto;
-  margin-right: auto;
+  height: 450px;
+  width: 300px;
+  margin: auto 30px;
 
   display: grid;
   grid-auto-rows: 1fr 1fr;
 
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   border-radius: 30px;
-
+  
   transition: .5s;
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.07);
     z-index: 2;
-  }
+  }   
 `
 
 const MiniCardHeader = styled.div`
