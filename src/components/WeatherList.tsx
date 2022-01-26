@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import WeatherPattern from "./WeatherPattern";
 import {ContentContainer, MainContainer} from "../styles/MainStyles";
 import {Arrow, BackArrow} from "../styles/AdditionalElementsStyles";
@@ -11,18 +11,29 @@ import CardAdder from "./CardAdder";
 // npm run deploy
 
 const WeatherList = () => {
-    const myCities = ["Moscow", "Boston", "Ekaterinburg", "Paris", "Budapest", "Samara"];
-    const [cities, setCities] = useState(myCities);
 
+    let myCities = ["Moscow", "Boston", "Ekaterinburg", "Paris", "Samara"];
+    const [cities, setCities] = useState<string[]>(myCities);
     const [showList, setShowList] = useState<boolean>(true);
     const [choice, setChoice] = useState<string>(cities[0]);
 
+    useEffect(() =>{
+
+    })
+
     const click = () => {
-        console.log("click");
         setShowList(!showList);
     }
 
     const handleChange = (city: string) => {
+        setChoice(city);
+        click();
+    }
+
+    const handleClick = (city: string) => {
+        const arr = cities;
+        arr.push(city);
+        setCities(arr);
         setChoice(city);
         click();
     }
@@ -36,7 +47,7 @@ const WeatherList = () => {
                             <MiniCard key={index} city={city} onClick={handleChange}/>
                         );
                     })}
-                    <CardAdder/>
+                    <CardAdder onClick={handleClick}/>
                 </MiniCardsList>
             </ContentContainer>
         );

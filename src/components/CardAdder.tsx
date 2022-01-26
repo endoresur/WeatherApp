@@ -1,22 +1,35 @@
-import React from 'react';
-import {Circle, Plus} from "../styles/AdditionalElementsStyles";
-import {Container, GridContainer} from "../styles/MainStyles";
-import {Card} from "../styles/CardAdderStyles";
+import React, {useState} from 'react';
+import {Container} from "../styles/MainStyles";
+import {Button, Card, Input} from "../styles/CardAdderStyles";
 
+interface CardAdderProps {
+    onClick: Function,
+}
 
-const CardAdder = () => {
+const CardAdder: React.FC<CardAdderProps> = ({onClick}) => {
+    const [city, setCity] = useState<string>('');
+
+    const handleClick = () => {
+        onClick(city);
+    }
+
+    const handleChange = (event: any) => {
+        setCity(event.target.value);
+    }
+
     return (
         <Card>
-            <GridContainer>
-                <Container>
-                    Add new
+            <Container>
+                <Container pt={"160px"}>
+                    <form>
+                        <label>
+                            New place
+                            <Input type="text" name="place" onChange={handleChange}/>
+                        </label>
+                        <Button onClick={handleClick}>add</Button>
+                    </form>
                 </Container>
-                <Container>
-                    <Circle>
-                        <Plus/>
-                    </Circle>
-                </Container>
-            </GridContainer>
+            </Container>
         </Card>
     );
 };

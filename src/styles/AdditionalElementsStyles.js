@@ -52,10 +52,6 @@ const Arrow = styled.div`
 `
 
 const Circle = styled.div`
-  position: absolute;
-  left: -155%;
-  top: 85px;
-
   height: 180px;
   width: 180px;
 
@@ -63,6 +59,11 @@ const Circle = styled.div`
   border-radius: 50%;
 
   cursor: pointer;
+
+  transition: .5s;
+  &:hover {
+    transform: scale(0.9);
+  }
 `
 
 const Plus = styled.div`
