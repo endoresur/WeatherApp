@@ -6,6 +6,7 @@ import MiniCard from "./MiniCard";
 import {CSSTransition, SwitchTransition} from "react-transition-group";
 import '../styles/ContainerAnimations.css';
 import MiniCardsList from "./MiniCardsList";
+import CardAdder from "./CardAdder";
 
 // npm run deploy
 
@@ -35,6 +36,7 @@ const WeatherList = () => {
                             <MiniCard key={index} city={city} onClick={handleChange}/>
                         );
                     })}
+                    <CardAdder/>
                 </MiniCardsList>
             </ContentContainer>
         );

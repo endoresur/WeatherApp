@@ -51,5 +51,41 @@ const Arrow = styled.div`
   }
 `
 
+const Circle = styled.div`
+  position: absolute;
+  left: -155%;
+  top: 85px;
 
-export {BackArrow, Arrow};
+  height: 180px;
+  width: 180px;
+
+  background-color: #39518A;
+  border-radius: 50%;
+
+  cursor: pointer;
+`
+
+const Plus = styled.div`
+  background-image: linear-gradient(#FFADA9, #FFF79D);
+  border-radius: 30px;
+  height: 140px;
+  width: 20px;
+  position: relative;
+  left: 43%;
+  top: 10%;
+  
+  &:after {
+    content: "";
+    height: 20px;
+    width: 140px;
+    background-image: linear-gradient(to right, #FFF79D, #FFADA9);
+    border-radius: 30px;
+    position: absolute;
+    left: -60px;
+    top: 60px;
+  }
+  
+`
+
+
+export {BackArrow, Arrow, Plus, Circle};
