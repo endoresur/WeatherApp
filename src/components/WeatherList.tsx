@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
 import WeatherPattern from "./WeatherPattern";
-import {Container, ContentContainer, MainContainer} from "../styles/MainStyles";
+import {ContentContainer, MainContainer} from "../styles/MainStyles";
 import {Arrow, BackArrow} from "../styles/AdditionalElementsStyles";
-import {MiniCardsContainer} from "../styles/MiniCardsStyles";
 import MiniCard from "./MiniCard";
 import {CSSTransition, SwitchTransition} from "react-transition-group";
 import '../styles/ContainerAnimations.css';
@@ -30,7 +29,7 @@ const WeatherList = () => {
     const ShowMiniCardsContainer = () => {
         return (
             <ContentContainer>
-                <MiniCardsList>
+                <MiniCardsList >
                     {cities.map((city, index) => {
                         return (
                             <MiniCard key={index} city={city} onClick={handleChange}/>

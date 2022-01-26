@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {APIProps, IWeather} from "../types/types";
-import {Container, MainContainer} from "../styles/MainStyles";
+import {Container} from "../styles/MainStyles";
 import WeatherCard from "./WeatherCard";
 import WeatherExtractor from "./WeatherExtractor";
 

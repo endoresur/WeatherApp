@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const MiniCardsContainer = styled.div`
   text-transform: uppercase;
-
+  
   overflow: scroll;  
   overflow-y: hidden;
   height: 100%;
