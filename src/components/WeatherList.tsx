@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import WeatherPattern from "./WeatherPattern";
 import {ContentContainer, MainContainer} from "../styles/MainStyles";
 import {Arrow, BackArrow} from "../styles/AdditionalElementsStyles";
@@ -16,10 +16,6 @@ const WeatherList = () => {
     const [cities, setCities] = useState<string[]>(myCities);
     const [showList, setShowList] = useState<boolean>(true);
     const [choice, setChoice] = useState<string>(cities[0]);
-
-    useEffect(() =>{
-
-    })
 
     const click = () => {
         setShowList(!showList);
