@@ -4,9 +4,10 @@ import {Color, IWeather, MiniCardProps} from "../types/types";
 import WeatherExtractor from "./WeatherExtractor";
 import {Container, GridContainer} from "../styles/MainStyles";
 import ImgDeterminant from "./ImgDeterminant";
+import { Cross } from '../styles/AdditionalElementsStyles';
 
 const MiniCard: React.FC<MiniCardProps> = (
-    {city, onClick}) => {
+    {city, onClickAdd, onClickDelete, index}) => {
 
     const [weather, setWeather] = useState<IWeather>();
 
@@ -14,15 +15,22 @@ const MiniCard: React.FC<MiniCardProps> = (
         setWeather(data);
     }
 
-    const handleClick = () => {
-        onClick(city);
+    const handleClickAdd = () => {
+        onClickAdd(city);
+    }
+
+    const handleClickDelete = () => {
+        onClickDelete(index);
     }
 
     return (
         <Card>
             <MiniCardHeader>
                 <GridContainer rows={"1fr 4fr 2fr 1fr"}>
-                    <Container>{weather?.name}</Container>
+                    <Container>
+                        <Cross onClick={handleClickDelete}/>
+                        {weather?.name}
+                    </Container>
                     <Container>
                         <ImgDeterminant
                             weather={weather?.weather[0].main}
@@ -37,7 +45,7 @@ const MiniCard: React.FC<MiniCardProps> = (
                     </Container>
                 </GridContainer>
             </MiniCardHeader>
-            <MiniCardBody onClick={handleClick}>
+            <MiniCardBody onClick={handleClickAdd}>
                 <Container>More</Container>
             </MiniCardBody>
 

@@ -14,6 +14,7 @@ const WeatherList = () => {
 
     let myCities = ["Moscow", "Boston", "Ekaterinburg", "Paris", "Samara"];
     const [cities, setCities] = useState<string[]>(myCities);
+    const [update, setUpdate] = useState<boolean>(false);
     const [showList, setShowList] = useState<boolean>(true);
     const [choice, setChoice] = useState<string>(cities[0]);
 
@@ -21,9 +22,15 @@ const WeatherList = () => {
         setShowList(!showList);
     }
 
-    const handleChange = (city: string) => {
+    const handleChangeAdd = (city: string) => {
         setChoice(city);
         click();
+    }
+
+    const handleChangeDelete = (index: number) => {
+        cities.splice(index, 1);
+        setCities(cities);
+        setUpdate(!update);
     }
 
     const handleClick = (city: string) => {
@@ -37,10 +44,16 @@ const WeatherList = () => {
     const ShowMiniCardsContainer = () => {
         return (
             <ContentContainer>
-                <MiniCardsList >
+                <MiniCardsList key={update}>
                     {cities.map((city, index) => {
                         return (
-                            <MiniCard key={index} city={city} onClick={handleChange}/>
+                            <MiniCard
+                                key={index}
+                                city={city}
+                                onClickAdd={handleChangeAdd}
+                                onClickDelete={handleChangeDelete}
+                                index={index}
+                            />
                         );
                     })}
                     <CardAdder onClick={handleClick}/>

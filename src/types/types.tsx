@@ -57,7 +57,9 @@ export interface ExtractorProps extends APIProps {
 }
 
 export interface MiniCardProps extends APIProps {
-    onClick: Function
+    onClickAdd: Function,
+    onClickDelete: Function,
+    index: number,
 }
 
 export const enum Color {

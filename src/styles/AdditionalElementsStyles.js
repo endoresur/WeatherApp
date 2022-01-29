@@ -84,9 +84,32 @@ const Plus = styled.div`
     position: absolute;
     left: -60px;
     top: 60px;
-  }
+  }  
+`
+
+const Cross = styled.div`
+  position: relative;
+  right: -90%;
+  top: 10px;
+  transform: rotate(-45deg);
   
+  background-color: white;
+  height: 20px;
+  width: 3px;
+  
+  cursor: pointer;
+  
+  &:after {
+    content: '';
+    position: absolute;
+    height: 20px;
+    width: 3px;
+    background-color: white;
+    transform: rotate(90deg);
+    top: -5%;
+    left: 2%;
+  }
 `
 
 
-export {BackArrow, Arrow, Plus, Circle};
+export {BackArrow, Arrow, Plus, Circle, Cross};
