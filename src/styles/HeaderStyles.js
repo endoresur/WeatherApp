@@ -13,18 +13,11 @@ const HeaderContainer = styled.header`
   text-align: center;
 `
 
-const HeaderSideBar = styled.div`
-  width: 40px;
-  height: 40px;
-  
-  padding-left: 20px;
-  padding-top: 10px;
-`
-
 const HeaderLogo = styled.div`
   width: 20%;
   margin-left: 30px;
-  position: relative;
+  top: 15px;
+  position: absolute;
 `
 
 const HeaderImg = styled.img`
@@ -37,7 +30,7 @@ const HeaderImg = styled.img`
 
 const HeaderInfo = styled.div`
   width: 100%;
-  padding-right: 20%;
+  text-align: center;
   padding-top: 20px;
 `
-export {HeaderContainer, HeaderSideBar, HeaderLogo, HeaderImg, HeaderInfo};
+export {HeaderContainer, HeaderLogo, HeaderImg, HeaderInfo};

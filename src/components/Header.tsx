@@ -1,7 +1,6 @@
 import React from 'react';
-import nav from "../icons/header_nav.png";
 import logo from "../icons/logo.png"
-import {HeaderContainer, HeaderInfo, HeaderLogo, HeaderImg, HeaderSideBar} from "../styles/HeaderStyles";
+import {HeaderContainer, HeaderInfo, HeaderLogo, HeaderImg} from "../styles/HeaderStyles";
 
 const weekDay = new Date().getDay();
 const monthDay = new Date().getDate();
@@ -14,9 +13,6 @@ const months = ['January', 'February', 'March', 'April', 'May', 'June',
 const Header = () => {
     return (
         <HeaderContainer>
-            <HeaderSideBar>
-                <img src={nav} alt='' height={40} width={40}/>
-            </HeaderSideBar>
             <HeaderLogo>
                 <HeaderImg src={logo} alt=''/>
             </HeaderLogo>
