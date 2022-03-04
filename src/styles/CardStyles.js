@@ -4,7 +4,7 @@ const CardContainer = styled.div`
   display: grid;
   grid-auto-rows: 1fr 1fr;
 
-  width: 1000px;
+  width: 100%;
   height: 430px;
 
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
